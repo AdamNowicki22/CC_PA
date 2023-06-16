@@ -1,0 +1,29 @@
+﻿public List<Item> BorrowedItems { get; set; }
+
+
+        public Book(int itemId, string itemName, int pageCount, string bookType)
+        {
+            this.itemId = itemId;
+            this.itemName = itemName;
+            this.pageCount = pageCount;
+            setBookType(bookType);
+
+        }
+        enum bookTypes
+        {
+            Novel,
+            Textbook,
+            Encyclopedia,
+            Other
+        }
+        public void setBookType(string type)
+        {
+            bookTypes parsedType;
+            if (Enum.TryParse(type, out parsedType))
+            {
+                this.bookType = parsedType;
+            }
+            else
+            {
+                this.bookType = bookTypes.Other;
+            }
