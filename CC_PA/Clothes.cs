@@ -11,10 +11,12 @@ namespace CC_PA
         public int ClothId;
         public string BrandName;
         public string ClothType;
+        private int secretCounter = 100;
 
-        public Clothes(int clothID, string brandName, string clothType)
+        public Clothes(string brandName, string clothType)
         {
-            ClothId = clothID;
+            ClothId = secretCounter;
+            secretCounter += 1;
             BrandName = brandName;
             setClothType(clothType);
         }

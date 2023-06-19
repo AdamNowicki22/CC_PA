@@ -17,11 +17,27 @@ namespace CC_PA
                 ClothesOnHanger.Add(cloth);
             }
             else if ((ClothesOnHanger.Count ==1) && (cloth.ClothType == "shirt" || cloth.ClothType == "blouse"))
-            { ClothesOnHanger.Add(cloth); }
+            {
+                if (ClothesOnHanger[0].ClothType== "skirt"||
+                    ClothesOnHanger[0].ClothType == "trousers")
+                {
+                    ClothesOnHanger.Add(cloth);
+                } 
+            }
+            else if ((ClothesOnHanger.Count == 1) && (cloth.ClothType == "skirt" || cloth.ClothType == "trousers"))
+            {
+                if (ClothesOnHanger[0].ClothType == "shirt" ||
+                    ClothesOnHanger[0].ClothType == "blouse")
+                {
+                    ClothesOnHanger.Add(cloth);
+                }
+            }
 
 
-            else if (ClothesOnHanger.Count < limitOfClothes)
-            { Console.WriteLine("This hanger is already full"); }
+            else if (ClothesOnHanger.Count >= limitOfClothes)
+            { 
+                Console.WriteLine("This hanger is already full");
+            }
         }
         public void RemoveClothByIdFromHanger(int id)
         {
