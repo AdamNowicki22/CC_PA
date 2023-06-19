@@ -8,12 +8,23 @@ namespace CC_PA
 {
     public class Wardrobe
     {
-        public int Capacity;
+        private int Capacity;
         public List<Hanger> ListOfHangers;
 
         public Wardrobe(int capacity)
         {
             capacity = Capacity;
+            ListOfHangers = new List<Hanger>();
         }
+
+        public void PutHangerIntoWardrobe(Hanger hanger)
+        {
+            if (ListOfHangers.Count < Capacity)
+            { 
+                ListOfHangers.Add(hanger);
+            }
+            else { Console.WriteLine("Wardrobe is full"); }
+        }
+
     }
 }

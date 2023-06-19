@@ -8,5 +8,21 @@ namespace CC_PA
 {
     public class HangerTypeB: Hanger
     {
+        private int limitOfClothes = 2;
+
+        public void PutClothOnHanger(Clothes cloth)
+        {   
+            if (ClothesOnHanger.Count == 0)
+            {
+                ClothesOnHanger.Add(cloth);
+            }
+            else if ((ClothesOnHanger.Count ==1) && (cloth.ClothType == "shirt" || cloth.ClothType == "blouse"))
+            { ClothesOnHanger.Add(cloth); }
+
+
+            else if (ClothesOnHanger.Count < limitOfClothes)
+            { Console.WriteLine("This hanger is already full"); }
+        }
+
     }
 }
