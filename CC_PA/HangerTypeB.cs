@@ -23,6 +23,19 @@ namespace CC_PA
             else if (ClothesOnHanger.Count < limitOfClothes)
             { Console.WriteLine("This hanger is already full"); }
         }
+        public void RemoveClothByIdFromHanger(int id)
+        {
+            foreach (Clothes cloth in ClothesOnHanger)
+            {
+                if(cloth.ClothId == id)
+                {
+                    ClothesOnHanger.Remove(cloth);
+                    Console.WriteLine("Cloth removed from hanger");
+                }
+
+            }
+
+        }
 
     }
 }

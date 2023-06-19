@@ -15,7 +15,8 @@ namespace CC_PA
         {
             if ((ClothesOnHanger.Count < limitOfClothes) && (cloth.ClothType=="shirt" || cloth.ClothType == "blouse"))
                 { ClothesOnHanger.Add(cloth); }
-            else { Console.WriteLine("This hanger is already full"); }
+            else { Console.WriteLine
+                    ("You cannot use this hanger, it is either full or you are trying to put wrong cloth type"); }
         }
     }
 }
