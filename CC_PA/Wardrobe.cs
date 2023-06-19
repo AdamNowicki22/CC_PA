@@ -59,7 +59,23 @@ namespace CC_PA
                     { return true; }
                 }
             }
-            return false;
+            else if (clothType == "trousers" || clothType == "skirt")
+            {
+                foreach (HangerTypeB hangerTypeB in ListOfHangers)
+                {   
+                    if (hangerTypeB.ClothesOnHanger.Count == 0)
+                    {
+                        return true;
+                    }
+                    else if (hangerTypeB.ClothesOnHanger.Count == 1 &&
+                        (hangerTypeB.ClothesOnHanger[0].ClothType == "shirt" ||
+                         hangerTypeB.ClothesOnHanger[0].ClothType == "blouse"))
+                    { 
+                        return true;
+                    }
+                }
+            }
+                return false;
         }
 
     }
